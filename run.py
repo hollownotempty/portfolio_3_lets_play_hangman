@@ -5,7 +5,7 @@ r = RandomWords()
 
 # grab random word to begin the game with
 def get_word():
-    word = r.get_random_word()
+    word = r.get_random_word(minLength=4, maxLength=8)
     return word.upper()
 
 
@@ -31,6 +31,9 @@ def play(word):
     print(display_hangman(tries))
     print(word_completed)
     print("\n")
+    # Algorithm below that checks the players input and checks if its right, 
+    # decrements tries if its wrong and reveals correct guesses. The while 
+    # loop closes as soon as guessed = True
     while not guessed and tries > 0:
         guess = input("Please guess a letter or word: ").upper()
         # code runs if player guesses one letter
@@ -38,35 +41,40 @@ def play(word):
             if guess in guessed_letters:
                 print("You already guessed the letter " + guess)
             elif guess not in word:
-                print(guess + "is not in the word.")
+                print(guess + " is not in the word.")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
                 print("Correct, " + guess + " is in the word!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_completed)
-                indices = [i for i, letter in enumerate(word) if letter == guess]
-                for index in indices:
-                    word_as_list[index] = guess
+                x = [i for i, letter in enumerate(word) if letter == guess]
+                for i in x:
+                    word_as_list[i] = guess
                 word_completed = "".join(word_as_list)
                 if "_" not in word_completed:
                     guessed = True
-        if len(guess) == len(word) and guess.isalpha():
-                if guess is in guessed_words:
-                    print("You already guessed the word " + guess)
-                elif guess != word:
-                    print(guess + " is not the word.")
-                    tries -= 1
-                    guessed_words.append(guess)
-                else:
-                    guessed = True
-                    word_completed = word        
+        # code runs if player guesses the full word
+        elif len(guess) == len(word) and guess.isalpha():
+            if guess in guessed_words:
+                print("You already guessed the word " + guess)
+            elif guess != word:
+                print(guess + " is not the word.")
+                tries -= 1
+                guessed_words.append(guess)
+            else:
+                guessed = True
+                word_completed = word        
         else:
             print("Not a valid guess.")
-        if guessed:
-            print("Congratulations, you guessed right!")
-        else:
-            print("Sorry, you ran out of tries. " + "The word was " + word)
+        print(display_hangman(tries))
+        print(word_completed)
+        print("You have guessed: " + ', '.join(guessed_letters))
+        print("\n")
+    if guessed:
+        print("Congratulations, you guessed right!")
+    else:
+        print("Sorry, you ran out of tries. " + "The word was " + word + ".")
 
 
 def display_hangman(tries):
