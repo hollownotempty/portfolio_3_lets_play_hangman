@@ -1,5 +1,11 @@
 # python code goes here
+from random_word import RandomWords
+r = RandomWords()
 
+
+def get_word():
+    word = r.get_random_word()
+    return word.upper()
 
 
 def display_hangman(tries):
@@ -75,4 +81,3 @@ def display_hangman(tries):
                 """
     ]
     return stages[tries]
-
