@@ -51,7 +51,16 @@ def play(word):
                 word_completed = "".join(word_as_list)
                 if "_" not in word_completed:
                     guessed = True
-                    
+    if len(guess) == len(word) and guess.isalpha():
+            if guess is in guessed_words:
+                print("You already guessed the word " + guess)
+            elif guess != word:
+                print(guess + " is not the word.")
+                tries -= 1
+                guessed_words.append(guess)
+            else:
+                guessed = True
+                word_completed = word        
 
 
 
