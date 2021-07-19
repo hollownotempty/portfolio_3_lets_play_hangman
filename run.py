@@ -3,9 +3,15 @@ from random_word import RandomWords
 r = RandomWords()
 
 
-# grab random word to begin the game with
-def get_word():
-    word = r.get_random_word(minLength=4, maxLength=8)
+# grabs a random word to begin the game with
+# if player chooses a long word
+def get_long_word():
+    word = r.get_random_word(minLength=8, maxLength=10)
+    return word.upper()
+
+
+def get_short_word():
+    word = r.get_random_word(minLength=3, maxLength=6)
     return word.upper()
 
 
@@ -16,26 +22,13 @@ def play(word):
     guessed_letters = []
     guessed_words = []
     tries = 6
-    print("""
-        
- _        ___  ______  __   _____     ____   _       ____  __ __      __ __   ____  ____    ____  ___ ___   ____  ____   __ 
-| |      /  _]|      ||  | / ___/    |    \ | |     /    ||  |  |    |  |  | /    ||    \  /    ||   |   | /    ||    \ |  |
-| |     /  [_ |      ||_ |(   \_     |  o  )| |    |  o  ||  |  |    |  |  ||  o  ||  _  ||   __|| _   _ ||  o  ||  _  ||  |
-| |___ |    _]|_|  |_|  \| \__  |    |   _/ | |___ |     ||  ~  |    |  _  ||     ||  |  ||  |  ||  \_/  ||     ||  |  ||__|
-|     ||   [_   |  |       /  \ |    |  |   |     ||  _  ||___, |    |  |  ||  _  ||  |  ||  |_ ||   |   ||  _  ||  |  | __ 
-|     ||     |  |  |       \    |    |  |   |     ||  |  ||     |    |  |  ||  |  ||  |  ||     ||   |   ||  |  ||  |  ||  |
-|_____||_____|  |__|        \___|    |__|   |_____||__|__||____/     |__|__||__|__||__|__||___,_||___|___||__|__||__|__||__|
-                                                                                                                            
-
-                """)
     print(display_hangman(tries))
     print(word_completed)
     print("\n")
-    # Algorithm below that checks the players input and checks if its right, 
-    # decrements tries if its wrong and reveals correct guesses. The while 
+    # Algorithm below that checks the players input and checks if its right,
+    # decrements tries if its wrong and reveals correct guesses. The while
     # loop closes as soon as guessed = True
     while not guessed and tries > 0:
-        global guess
         try:
             guess = input("Please guess a letter or word: ").upper()
         except EOFError as e:
@@ -168,7 +161,29 @@ def display_hangman(tries):
 
 
 def main():
-    word = get_word()
+    # word = get_word()
+    print("""
+        
+ _        ___  ______  __   _____     ____   _       ____  __ __      __ __   ____  ____    ____  ___ ___   ____  ____   __ 
+| |      /  _]|      ||  | / ___/    |    \ | |     /    ||  |  |    |  |  | /    ||    \  /    ||   |   | /    ||    \ |  |
+| |     /  [_ |      ||_ |(   \_     |  o  )| |    |  o  ||  |  |    |  |  ||  o  ||  _  ||   __|| _   _ ||  o  ||  _  ||  |
+| |___ |    _]|_|  |_|  \| \__  |    |   _/ | |___ |     ||  ~  |    |  _  ||     ||  |  ||  |  ||  \_/  ||     ||  |  ||__|
+|     ||   [_   |  |       /  \ |    |  |   |     ||  _  ||___, |    |  |  ||  _  ||  |  ||  |_ ||   |   ||  _  ||  |  | __ 
+|     ||     |  |  |       \    |    |  |   |     ||  |  ||     |    |  |  ||  |  ||  |  ||     ||   |   ||  |  ||  |  ||  |
+|_____||_____|  |__|        \___|    |__|   |_____||__|__||____/     |__|__||__|__||__|__||___,_||___|___||__|__||__|__||__|                                                              
+
+                """)
+    try:
+        l_or_s = input("Short word or long word? (L/S)").upper()
+    except EOFError as e:
+        print(e)
+    if l_or_s == "L":
+        word = get_long_word()
+    elif l_or_s == "S":
+        word = get_short_word()
+    else:
+        print('Not a valid input.')
+        main()
     play(word)
     while input("Play Again? (Y/N) ").upper() == "Y":
         word = get_word()
