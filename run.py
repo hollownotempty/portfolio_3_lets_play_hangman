@@ -35,7 +35,11 @@ def play(word):
     # decrements tries if its wrong and reveals correct guesses. The while 
     # loop closes as soon as guessed = True
     while not guessed and tries > 0:
-        guess = input("Please guess a letter or word: ").upper()
+        global guess
+        try:
+            guess = input("Please guess a letter or word: ").upper()
+        except EOFError as e:
+            print(e)
         # code runs if player guesses one letter
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
