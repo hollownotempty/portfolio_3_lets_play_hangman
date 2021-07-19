@@ -64,11 +64,12 @@ def play(word):
                 guessed_words.append(guess)
             else:
                 guessed = True
-                word_completed = word        
+                word_completed = word
         else:
             print("Not a valid guess.")
         print(display_hangman(tries))
         print(word_completed)
+        print('\n')
         print("You have guessed: " + ', '.join(guessed_letters))
         print("\n")
     if guessed:
@@ -78,7 +79,7 @@ def play(word):
 
 
 def display_hangman(tries):
-    stages = [  # sixth attempt
+    stages = [  # seventh attempt
                 """
                    --------
                    |      |
@@ -88,6 +89,16 @@ def display_hangman(tries):
                    |     / \\
                    -
                 """,
+                # sixth attempt
+                """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     /
+                   -
+                """,
                 # fifth attempt
                 """
                    --------
@@ -95,7 +106,7 @@ def display_hangman(tries):
                    |      O
                    |     \\|/
                    |      |
-                   |     / 
+                   |
                    -
                 """,
                 # fourth attempt
@@ -103,9 +114,9 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |     \\|
                    |      |
-                   |      
+                   |
                    -
                 """,
                 # third attempt
@@ -113,9 +124,9 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |     \\|
                    |      |
-                   |     
+                   |      |
+                   |
                    -
                 """,
                 # second attempt
@@ -124,8 +135,8 @@ def display_hangman(tries):
                    |      |
                    |      O
                    |      |
-                   |      |
-                   |     
+                   |
+                   |
                    -
                 """,
                 # first attempt
@@ -133,19 +144,19 @@ def display_hangman(tries):
                    --------
                    |      |
                    |      O
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
                    -
                 """,
                 # starting state
                 """
                    --------
                    |      |
-                   |      
-                   |    
-                   |      
-                   |     
+                   |
+                   |
+                   |
+                   |
                    -
                 """
     ]
@@ -158,6 +169,7 @@ def main():
     while input("Play Again? (Y/N) ").upper() == "Y":
         word = get_word()
         play(word)
+
 
 if __name__ == "__main__":
     main()
