@@ -185,9 +185,10 @@ def main():
         print('Not a valid input.')
         main()
     play(word)
-    while input("Play Again? (Y/N) ").upper() == "Y":
-        word = get_word()
-        play(word)
+    if input("Play Again? (Y/N) ").upper() == "Y":
+        main()
+    else:
+        exit()
 
 
 if __name__ == "__main__":
