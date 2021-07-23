@@ -1,3 +1,5 @@
+import constants
+
 # import random word package
 from random_word import RandomWords
 r = RandomWords()
@@ -12,6 +14,7 @@ def get_long_word():
 
 def get_short_word():
     word = r.get_random_word(minLength=3, maxLength=6)
+    print(word)
     return word.upper()
 
 
@@ -162,17 +165,7 @@ def display_hangman(tries):
 
 def main():
     # word = get_word()
-    print("""
-        
- _        ___  ______  __   _____     ____   _       ____  __ __      __ __   ____  ____    ____  ___ ___   ____  ____   __ 
-| |      /  _]|      ||  | / ___/    |    \ | |     /    ||  |  |    |  |  | /    ||    \  /    ||   |   | /    ||    \ |  |
-| |     /  [_ |      ||_ |(   \_     |  o  )| |    |  o  ||  |  |    |  |  ||  o  ||  _  ||   __|| _   _ ||  o  ||  _  ||  |
-| |___ |    _]|_|  |_|  \| \__  |    |   _/ | |___ |     ||  ~  |    |  _  ||     ||  |  ||  |  ||  \_/  ||     ||  |  ||__|
-|     ||   [_   |  |       /  \ |    |  |   |     ||  _  ||___, |    |  |  ||  _  ||  |  ||  |_ ||   |   ||  _  ||  |  | __ 
-|     ||     |  |  |       \    |    |  |   |     ||  |  ||     |    |  |  ||  |  ||  |  ||     ||   |   ||  |  ||  |  ||  |
-|_____||_____|  |__|        \___|    |__|   |_____||__|__||____/     |__|__||__|__||__|__||___,_||___|___||__|__||__|__||__|                                                              
-
-                """)
+    print(constants.lets_play_hangman)
     try:
         l_or_s = input("Short word or long word? (L/S)").upper()
     except EOFError as e:
