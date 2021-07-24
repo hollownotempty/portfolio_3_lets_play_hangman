@@ -34,9 +34,9 @@ def play(word):
     # loop closes as soon as guessed = True
     while not guessed and tries > 0:
         try:
-            guess = input("Please guess a letter or word: ").upper()
-        except EOFError as e:
-            print(e)
+            guess = input("Please guess a letter or the full word: ").upper()
+        except EOFError:
+            print("You didn't enter anything, please guess a letter or a full word")
         # code runs if player guesses one letter
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
@@ -81,7 +81,7 @@ def play(word):
 
 def display_hangman(tries):
     constants.hangman_stages
-    return stages[tries]
+    return constants.hangman_stages[tries]
 
 
 def main():
@@ -89,8 +89,8 @@ def main():
     print(constants.lets_play_hangman)
     try:
         easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
-    except EOFError as e:
-        print(e)
+    except EOFError:
+        print("You didn't enter anything, please enter E or H.")
     if easy_or_hard == constants.hard_choice:
         word = get_hard_word()
     elif easy_or_hard == constants.easy_choice:
