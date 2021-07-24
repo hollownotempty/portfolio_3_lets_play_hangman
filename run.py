@@ -86,7 +86,14 @@ def display_hangman(incorrect_guesses):
 
 def main():
     # word = get_word()
-    print(constants.lets_play_hangman)
+    print("""
+               _                                                           
+ __        _  | |       _____ _            _____                           
+|  |   ___| |_|_|___   |  _  | |___ _ _   |  |  |___ ___ ___ _____ ___ ___ 
+|  |__| -_|  _| |_ -|  |   __| | .'| | |  |     | .'|   | . |     | .'|   |
+|_____|___|_|   |___|  |__|  |_|__,|_  |  |__|__|__,|_|_|_  |_|_|_|__,|_|_|
+                                   |___|                |___|              
+                """)
     easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
     if easy_or_hard == constants.hard_choice:
         word = get_hard_word()
