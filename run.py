@@ -90,7 +90,7 @@ def main():
     try:
         easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
     except EOFError:
-        print("You didn't enter anything, please enter E or H for an easy or hard letter.")
+        print("You didn't enter anything, please enter E or H.")
     if easy_or_hard == constants.hard_choice:
         word = get_hard_word()
     elif easy_or_hard == constants.easy_choice:
