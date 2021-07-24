@@ -32,7 +32,7 @@ def play(word):
     # Algorithm below that checks the players input and checks if its right,
     # decrements tries if its wrong and reveals correct guesses. The while
     # loop closes as soon as guessed = True
-    while not guessed and incorrect_guesses < 8:
+    while not guessed and incorrect_guesses < 7:
         try:
             guess = input("Please guess a letter or the full word: ").upper()
         except EOFError:
@@ -79,9 +79,9 @@ def play(word):
         print("Sorry, you ran out of tries. " + "The word was " + word + ".")
 
 
-def display_hangman(tries):
+def display_hangman(incorrect_guesses):
     constants.hangman_stages
-    return constants.hangman_stages[tries]
+    return constants.hangman_stages[incorrect_guesses]
 
 
 def main():
