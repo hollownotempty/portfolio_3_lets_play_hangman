@@ -68,7 +68,7 @@ def play(word):
                 word_completed = word
         else:
             print("Not a valid guess.")
-        print(display_hangman(tries))
+        print(display_hangman(incorrect_guesses))
         print(word_completed)
         print('\n')
         print("You have guessed: " + ', '.join(guessed_letters))
