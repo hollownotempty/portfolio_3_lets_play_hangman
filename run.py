@@ -87,10 +87,7 @@ def display_hangman(incorrect_guesses):
 def main():
     # word = get_word()
     print(constants.lets_play_hangman)
-    try:
-        easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
-    except EOFError:
-        print("You didn't enter anything, please enter E or H.")
+    easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
     if easy_or_hard == constants.hard_choice:
         word = get_hard_word()
     elif easy_or_hard == constants.easy_choice:
