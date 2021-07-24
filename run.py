@@ -1,4 +1,6 @@
+import random
 import constants
+from easy_words import word_list
 
 # import random word package
 from random_word import RandomWords
@@ -7,14 +9,13 @@ r = RandomWords()
 
 # grabs a random word to begin the game with
 # if player chooses a long word
-def get_long_word():
+def get_hard_word():
     word = r.get_random_word(minLength=8, maxLength=10)
     return word.upper()
 
 
-def get_short_word():
-    word = r.get_random_word(minLength=3, maxLength=6)
-    print(word)
+def get_easy_word():
+    word = random.choice(word_list)
     return word.upper()
 
 
@@ -79,87 +80,7 @@ def play(word):
 
 
 def display_hangman(tries):
-    stages = [  # seventh attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |     / \\
-                   -
-                """,
-                # sixth attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |     /
-                   -
-                """,
-                # fifth attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |
-                   -
-                """,
-                # fourth attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |     \\|
-                   |      |
-                   |
-                   -
-                """,
-                # third attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |      |
-                   |      |
-                   |
-                   -
-                """,
-                # second attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |      |
-                   |
-                   |
-                   -
-                """,
-                # first attempt
-                """
-                   --------
-                   |      |
-                   |      O
-                   |
-                   |
-                   |
-                   -
-                """,
-                # starting state
-                """
-                   --------
-                   |      |
-                   |
-                   |
-                   |
-                   |
-                   -
-                """
-    ]
+    constants.hangman_stages
     return stages[tries]
 
 
@@ -167,13 +88,13 @@ def main():
     # word = get_word()
     print(constants.lets_play_hangman)
     try:
-        l_or_s = input("Short word or long word? (L/S)").upper()
+        easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
     except EOFError as e:
         print(e)
-    if l_or_s == "L":
-        word = get_long_word()
-    elif l_or_s == "S":
-        word = get_short_word()
+    if easy_or_hard == constants.hard_choice:
+        word = get_hard_word()
+    elif easy_or_hard == constants.easy_choice:
+        word = get_easy_word()
     else:
         print('Not a valid input.')
         main()
