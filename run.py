@@ -21,7 +21,7 @@ def get_easy_word():
 
 # sets state of play and displays the blank spaces for the player to guess
 def play(word):
-    word_completed = "_" * len(word)
+    word_completed = "_ " * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
@@ -53,7 +53,7 @@ def play(word):
                 for i in x:
                     word_as_list[i] = guess
                 word_completed = "".join(word_as_list)
-                if "_" not in word_completed:
+                if "_ " not in word_completed:
                     guessed = True
         # code runs if player guesses the full word
         elif len(guess) == len(word) and guess.isalpha():
