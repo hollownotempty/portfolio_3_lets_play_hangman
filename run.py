@@ -25,25 +25,25 @@ def play(word):
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 6
-    print(display_hangman(tries))
+    incorrect_guesses = 0
+    print(display_hangman(incorrect_guesses))
     print(word_completed)
     print("\n")
     # Algorithm below that checks the players input and checks if its right,
     # decrements tries if its wrong and reveals correct guesses. The while
     # loop closes as soon as guessed = True
-    while not guessed and tries > 0:
+    while not guessed and incorrect_guesses < 8:
         try:
             guess = input("Please guess a letter or the full word: ").upper()
         except EOFError:
-            print("You didn't enter anything, please guess a letter or a full word")
+            print("You didn't enter anything, please guess a letter or a word")
         # code runs if player guesses one letter
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter " + guess)
             elif guess not in word:
                 print(guess + " is not in the word.")
-                tries -= 1
+                incorrect_guesses += 1
                 guessed_letters.append(guess)
             else:
                 print("Correct, " + guess + " is in the word!")
@@ -61,7 +61,7 @@ def play(word):
                 print("You already guessed the word " + guess)
             elif guess != word:
                 print(guess + " is not the word.")
-                tries -= 1
+                incorrect_guesses += 1
                 guessed_words.append(guess)
             else:
                 guessed = True

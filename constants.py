@@ -11,37 +11,43 @@ hard_choice = 'H'
 
 easy_choice = 'E'
 
-hangman_stages = [  # seventh attempt
+hangman_stages = [
                 """
                    --------
                    |      |
-                   |      O
-                   |     \\|/
-                   |      |
-                   |     / \\
+                   |
+                   |
+                   |
+                   |
                    -
                 """,
-                # sixth attempt
                 """
                    --------
                    |      |
                    |      O
-                   |     \\|/
-                   |      |
-                   |     /
+                   |
+                   |
+                   |
                    -
                 """,
-                # fifth attempt
                 """
                    --------
                    |      |
                    |      O
-                   |     \\|/
+                   |      |
+                   |
+                   |
+                   -
+                """,
+                """
+                   --------
+                   |      |
+                   |      O
+                   |      |
                    |      |
                    |
                    -
                 """,
-                # fourth attempt
                 """
                    --------
                    |      |
@@ -51,44 +57,31 @@ hangman_stages = [  # seventh attempt
                    |
                    -
                 """,
-                # third attempt
                 """
                    --------
                    |      |
                    |      O
-                   |      |
+                   |     \\|/
                    |      |
                    |
                    -
                 """,
-                # second attempt
                 """
                    --------
                    |      |
                    |      O
+                   |     \\|/
                    |      |
-                   |
-                   |
+                   |     /
                    -
                 """,
-                # first attempt
                 """
                    --------
                    |      |
                    |      O
-                   |
-                   |
-                   |
+                   |     \\|/
+                   |      |
+                   |     / \\
                    -
                 """,
-                # starting state
-                """
-                   --------
-                   |      |
-                   |
-                   |
-                   |
-                   |
-                   -
-                """
     ]
