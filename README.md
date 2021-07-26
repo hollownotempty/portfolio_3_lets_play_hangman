@@ -1,6 +1,4 @@
-# FeelGood Physio Booking System
-
-## A Command Line Interface Application
+# Let's Play Hangman
 
 
 
