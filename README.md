@@ -95,3 +95,36 @@ The files for this program were validated using [PEP8](http://pep8online.com/) a
 
 Full information on the testing of this application can be found in [TESTING.md](TESTING.md)
 
+# Deployment
+
+### Forking the GitHub Repository
+
+1. Go to the page of the relevant Github repository
+2. Click 'Fork' on the top right.
+3. This will have cloned the repository to your Github account.
+
+### Making a Local Clone
+
+1. Go to the page of the relevant Github repository
+2. Click on the 'Code' button.
+3. Clone the repository using HTTPS by copying the link.
+4. Open Git Bash.
+5. Navigate to the directory where your clone will go.
+6. Type ```git clone {your clone url}```
+7. Press Enter.
+8. Your local clone will be in the specified directory.
+
+### Heroku
+
+These are the steps used to deploy this application to Heroku:
+
+1. Create an account at [heroku.com](https://.heroku.com/)
+2. Create a new app with your app name and region.
+3. Click on create app.
+4. Navigate to the "Settings" tab on your app dashboard.
+5. Under Config Vars, add any sensitive data (creds.json for example)
+6. Set your buildpacks in the correct order, in this case ```Python``` and ```NodeJS``` in that order.
+7. In the deploy tab, click 'Connect to Github'.
+8. Search for your repository and click connect.
+9. Choose the correct branch for your application
+10. If desired, click on "Enable Automatic Deploys", which updates the deployed version with the latest commit you have pushed to Github. 
