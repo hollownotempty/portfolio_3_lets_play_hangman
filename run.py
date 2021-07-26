@@ -34,7 +34,7 @@ def play(word):
     # loop closes as soon as guessed = True
     while not guessed and incorrect_guesses < 7:
         try:
-            guess = input("Please guess a letter or the full word: ").upper()
+            guess = input("Please guess a letter or the full word: \n").upper()
         except EOFError:
             print("You didn't enter anything, please guess a letter or a word")
         # code runs if player guesses one letter
@@ -88,7 +88,7 @@ def main():
     # word = get_word()
     print(constants.lets_play_hangman)
     try:
-        easy_or_hard = input("Easy Mode or Hard Mode? (E/H)").upper()
+        easy_or_hard = input("Easy Mode or Hard Mode? (E/H) \n").upper()
     except EOFError:
         print("You didn't enter anything, please enter E or H.")
     if easy_or_hard == constants.hard_choice:
@@ -99,7 +99,7 @@ def main():
         print('Not a valid input.')
         main()
     play(word)
-    if input("Play Again? (Y/N) ").upper() == "Y":
+    if input("Play Again? (Y/N) \n").upper() == "Y":
         main()
     else:
         exit()
