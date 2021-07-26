@@ -87,3 +87,6 @@ ___
 
 - [Random-Word](https://pypi.org/project/Random-Word/) - Was used to generate random words to populate the game with.
 
+## Validation 
+
+The files for this program were validated using [PEP8](http://pep8online.com/) and screenshots of the validations can be found [here](assets/images/validation). No errors were found apart from small warnings due to the ASCII artwork, but these warnings don't create problems in the programme and are needed for the graphics to be created. 
