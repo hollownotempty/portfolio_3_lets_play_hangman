@@ -1,45 +1,91 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# FeelGood Physio Booking System
 
-Welcome Tom Holohan,
+## A Command Line Interface Application
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Contents
 
-`python3 -m http.server`
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+## User Experience
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Strategy
+___
 
-A blue button should appear to click: *Make Public*,
+#### **Project Goals**
 
-Another blue button should appear to click: *Open Browser*.
+The goals for Let's Play Hangman were to create a randomized version of the classic game Hangman by using random word packages and ASCII artwork.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### **User Goals**
 
-## Updates Since The Instructional Video
+Players should be able to decide between an easy or hard game mode, observe the hangman character easily and input their guesses and restart the game when either they guess all the letters or run out of attempts. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Flowchart
+___
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+The flowchart for Let's Play Hangman can be found [here](assets/images/flowchart/hangman_flowchart.pdf). 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### User Stories
+___
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Player User Stories
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+1. I would like to be able to pick an easy or hard game, for players of different ages and skill levels.
+2. I would like to be able to see what letters I have played already to keep track of my guesses. 
+3. I would like to be able to see a graphic depiction of the hangman, to keep track of how close I am to losing the game. 
+4. I would like to be able to restart the game once completedd until I am finished playing. 
+5. I would like random words to be used, to make sure that I don't get duplicate words everytime I play. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Technology Design
+___
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### User interface
 
---------
+Anyone who has played hangman knows that it's all about being able to draw the character throughout the stages of play, and populating the blank spaces with correct guesses. This meant that to create the game properly I would have to use ASCII art and underscores to emulate the traditional way the game is played. 
 
-Happy coding!
+For example, the various stages of the hangman are held in [constants.py](constants.py). 
+
+```
+"""
+   --------
+   |      |
+   |      O
+   |     \\|/
+   |      |
+   |     / \\
+   -
+"""
+```
+Here is a demonstration of the final stage of the hangman. 
+
+## Technologies used
+
+### Languages
+___
+
+- [Python 3](https://www.python.org/) - Was used solely to create this project.
+
+
+### Applications and Packages
+
+---
+
+#### Applications
+
+- [Git](https://git-scm.com/) - Used for version control.
+
+- [Github](https://github.com/) - Holds the repository of the project.
+
+- [Gitpod](https://gitpod.com/) - The IDE used to create the application.
+
+- [Heroku](https://www.heroku.com) - Used to deploy the application.
+
+- [Lucidchart](https://lucid.co/product/lucidchart) - Used to make flowchart.
+
+
+#### Packages
+
+- [Random-Word](https://pypi.org/project/Random-Word/) - Was used to generate random words to populate the game with.
+
