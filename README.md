@@ -91,6 +91,10 @@ Here is a demonstration of the final stage of the hangman.
 
 - [Lucidchart](https://lucid.co/product/lucidchart) - Used to make flowchart.
 
+- [TinyPNG](https://tinypng.com) - Used to compress images.
+
+- [ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) - Created ASCII art using this generator.
+
 
 ### Packages
 
@@ -140,3 +144,22 @@ These are the steps used to deploy this application to Heroku:
 8. Search for your repository and click connect.
 9. Choose the correct branch for your application
 10. If desired, click on "Enable Automatic Deploys", which updates the deployed version with the latest commit you have pushed to Github. 
+
+## Credits
+
+### Coding tips and tricks
+
+- Replacing spaces in a string so that the list comprehension would work when replacing hidden letters:
+[StackOverflow, Cédric Julien](https://stackoverflow.com/questions/8270092/remove-all-whitespace-in-a-string)
+
+- List comprehension: 
+[W3Schools](https://www.w3schools.com/python/python_lists_comprehension.asp)
+
+- Python's ```enumerate()``` function:
+[Real Python](https://realpython.com/python-enumerate/)
+
+### Acknowledgments
+
+Thank you to the Code Institute Slack Community for help with small issues and problems I couldn't figure out on my own. 
+
+Special thanks to my mentor Akshat Garg for his help and guidance with this project. 
