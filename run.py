@@ -1,10 +1,11 @@
 import random
 import constants
-# from easy_words import word_list
+
 
 # import random word package
 from random_word import RandomWords
 r = RandomWords()
+
 
 # grabs a random word to begin the game with
 # if player chooses a long word
