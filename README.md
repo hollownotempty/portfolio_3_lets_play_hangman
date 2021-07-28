@@ -22,7 +22,6 @@
    3. [Heroku](#heroku)
 
 ## Strategy
----
 
 ### Project Goals
 
@@ -34,12 +33,10 @@ Players should be able to decide between an easy or hard game mode, observe the 
 
 
 ## Flowchart
-___
 
 The flowchart for Let's Play Hangman can be found [here](assets/images/flowchart/hangman_flowchart.pdf). 
 
 ## User Stories
-___
 
 ### Player User Stories
 
@@ -50,7 +47,6 @@ ___
 5. I would like random words to be used, to make sure that I don't get duplicate words everytime I play. 
 
 ## Technology Design
----
 
 ### User interface
 
@@ -72,7 +68,6 @@ For example, the various stages of the hangman are held in [constants.py](consta
 Here is a demonstration of the final stage of the hangman. 
 
 ## Technologies Used
----
 
 ### Languages
 
@@ -101,17 +96,14 @@ Here is a demonstration of the final stage of the hangman.
 - [Random-Word](https://pypi.org/project/Random-Word/) - Was used to generate random words to populate the game with.
 
 ## Validation 
----
 
 The files for this program were validated using [PEP8](http://pep8online.com/) and screenshots of the validations can be found [here](assets/images/validation). No errors were found apart from small warnings due to the ASCII artwork, but these warnings don't create problems in the programme and are needed for the graphics to be created. 
 
 ## Testing
----
 
 Full information on the testing of this application can be found in [TESTING.md](TESTING.md)
 
 ## Deployment
----
 
 ### Forking the GitHub Repository
 
