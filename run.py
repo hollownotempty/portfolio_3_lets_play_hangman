@@ -1,21 +1,20 @@
 import random
 import constants
-from easy_words import word_list
+# from easy_words import word_list
 
 # import random word package
 from random_word import RandomWords
 r = RandomWords()
 
-
 # grabs a random word to begin the game with
 # if player chooses a long word
 def get_hard_word():
-    word = r.get_random_word(minLength=8, maxLength=10)
+    word = r.get_random_word(minCorpusCount=6, maxCorpusCount=8)
     return word.upper()
 
 
 def get_easy_word():
-    word = random.choice(word_list)
+    word = r.get_random_word(minCorpusCount=10)
     return word.upper()
 
 
