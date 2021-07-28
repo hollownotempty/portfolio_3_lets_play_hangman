@@ -21,13 +21,14 @@ def get_easy_word():
 
 # sets state of play and displays the blank spaces for the player to guess
 def play(word):
-    word_completed = "_" * len(word)
+    word_completed = ("_" + " ") * len(word)
     guessed = False
     guessed_letters = []
     guessed_words = []
     incorrect_guesses = 0
     print(display_hangman(incorrect_guesses))
     print(word_completed)
+
     print("\n")
     # Algorithm below that checks the players input and checks if its right,
     # decrements tries if its wrong and reveals correct guesses. The while
@@ -48,11 +49,12 @@ def play(word):
             else:
                 print("Correct, " + guess + " is in the word!")
                 guessed_letters.append(guess)
-                word_as_list = list(word_completed)
+                joined_word = word_completed.replace(" ", "")
+                word_as_list = list(joined_word)
                 x = [i for i, letter in enumerate(word) if letter == guess]
                 for i in x:
                     word_as_list[i] = guess
-                word_completed = "".join(word_as_list)
+                word_completed = " ".join(word_as_list)
                 if "_" not in word_completed:
                     guessed = True
         # code runs if player guesses the full word
