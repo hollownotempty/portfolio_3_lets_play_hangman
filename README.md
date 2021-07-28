@@ -158,6 +158,9 @@ These are the steps used to deploy this application to Heroku:
 - Python's ```enumerate()``` function:
 [Real Python](https://realpython.com/python-enumerate/)
 
+- Info on how minCorpusCount works for Random-Word package (alternatively known as Wordnik API):
+[StackOverflow, fehguy](https://stackoverflow.com/questions/11583339/what-is-minimum-corpus-frequency-for-terms-in-wordnik-api)
+
 ### Acknowledgments
 
 Thank you to the Code Institute Slack Community for help with small issues and problems I couldn't figure out on my own. 
