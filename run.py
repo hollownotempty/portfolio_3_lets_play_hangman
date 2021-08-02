@@ -15,7 +15,7 @@ def get_hard_word():
 
 
 def get_easy_word():
-    word = r.get_random_word(minCorpusCount=10)
+    word = r.get_random_word(minCorpusCount=20, maxLength=5)
     return word.upper()
 
 
