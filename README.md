@@ -1,5 +1,7 @@
 # Let's Play Hangman
 
+![game_screenshots](assets/images/screenshots/game_screenshot.png)
+
 ## Contents
 
 1. [Strategy](#strategy)
