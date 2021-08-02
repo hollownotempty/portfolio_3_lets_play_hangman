@@ -10,12 +10,12 @@ r = RandomWords()
 # grabs a random word to begin the game with
 # if player chooses a long word
 def get_hard_word():
-    word = r.get_random_word(minCorpusCount=6, maxCorpusCount=8)
+    word = r.get_random_word(minCorpusCount=5, maxCorpusCount=7)
     return word.upper()
 
 
 def get_easy_word():
-    word = r.get_random_word(minCorpusCount=20, maxLength=5)
+    word = r.get_random_word(minCorpusCount=15, maxLength=7)
     return word.upper()
 
 
